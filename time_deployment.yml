@@ -20,7 +20,6 @@ spec:
         ports:
         - containerPort: 3000
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -47,7 +46,6 @@ spec:
         - containerPort: 5000
         imagePullPolicy: Always
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -70,7 +68,6 @@ spec:
         configMap:
           name: mongo-initdb
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -87,7 +84,7 @@ spec:
     spec:
       containers:
         - name: mysql-db
-          image: us.gcr.io/time-382620/time-enter_data
+          image: us.gcr.io/time-382620/mysql
           ports:
             - containerPort: 3306
               name: mysql-db
@@ -95,7 +92,6 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               value: root
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -116,7 +112,6 @@ spec:
         ports:
         - containerPort: 3001
 ---
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -138,4 +133,4 @@ spec:
         - containerPort: 8004
         env:
         - name: AUTH_SERVICE_HOST
-          value: "nodelogin"
+          value: nodelogin
