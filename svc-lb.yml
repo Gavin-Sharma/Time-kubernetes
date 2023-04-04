@@ -4,15 +4,15 @@ metadata:
   name: time-lb
 spec:
   type: LoadBalancer
+  selector:
+    app: enter-data
   ports:
   - name: enter-data-port
     port: 8001
     targetPort: 5000
-    selector:
-      app: enter-data
+
   - name: mysql-port
     port: 32000
     targetPort: 3306
     selector:
       app: mysql-db
-  
