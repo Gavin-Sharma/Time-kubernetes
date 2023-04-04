@@ -10,7 +10,6 @@ spec:
     targetPort: 5000
     selector:
       app: enter-data
-
   - name: mysql-port
     port: 32000
     targetPort: 3306
