@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: enter-data
 spec:
+  type: LoadBalancer
   selector:
     app: enter-data
   ports:
