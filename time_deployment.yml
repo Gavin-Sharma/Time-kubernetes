@@ -91,6 +91,8 @@ spec:
           env:
             - name: MYSQL_ROOT_PASSWORD
               value: root
+            - name: MYSQL_HOST
+              value: mysql_db
 ---
 apiVersion: apps/v1
 kind: Deployment

@@ -57,3 +57,18 @@ spec:
   selector:
     app: view-data
   type: LoadBalancer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-db
+  labels:
+    app: mysql-db
+spec:
+  ports:
+    - name: mysql-db
+      port: 3306
+      targetPort: 3306
+  selector:
+    app: mysql-db
+  type: LoadBalancer
