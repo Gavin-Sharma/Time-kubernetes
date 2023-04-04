@@ -69,8 +69,6 @@ spec:
         image: us.gcr.io/time-382620/mongo
       volumes:
       - name: mongo-initdb
-        configMap:
-          name: mongo-initdb
 ---
 apiVersion: apps/v1
 kind: Deployment
