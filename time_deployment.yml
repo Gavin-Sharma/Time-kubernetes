@@ -97,6 +97,11 @@ spec:
               value: root
             - name: MYSQL_HOST
               value: mysql_db
+          volumeMounts:
+          - name: mysql-initdb
+            mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: mysql-initdb
 ---
 apiVersion: apps/v1
 kind: Deployment
