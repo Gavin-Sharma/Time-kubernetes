@@ -74,6 +74,8 @@ spec:
           value: root
         - name: MONGO_INITDB_DATABASE
           value: analytics
+        port:
+        - containerPort: 27017
       volumes:
       - name: mongo-initdb
 ---
