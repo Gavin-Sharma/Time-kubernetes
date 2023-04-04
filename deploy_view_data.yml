@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: view_data
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: view_data
+  template:
+    metadata:
+      labels:
+        app: view_data
+    spec:
+      containers:
+      - name: view_data
+        image: us.gcr.io/time-382620/time-view_data
+        ports:
+        - containerPort: 8004
+        env:
+        - name: AUTH_SERVICE_HOST
+          value: "nodelogin"

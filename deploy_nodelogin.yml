@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodelogin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodelogin
+  template:
+    metadata:
+      labels:
+        app: nodelogin
+    spec:
+      containers:
+      - name: nodelogin
+        image: us.gcr.io/time-382620/time-nodelogin
+        ports:
+        - containerPort: 3001

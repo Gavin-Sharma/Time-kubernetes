@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: view_data
+spec:
+  selector:
+    app: view_data
+  ports:
+  - name: view_data
+    port: 8004
+    targetPort: 8004

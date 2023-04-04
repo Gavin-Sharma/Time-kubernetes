@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics-service
+  labels:
+    app: analytics-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: analytics-service
+  template:
+    metadata:
+      labels:
+        app: analytics-service
+    spec:
+      containers:
+      - name: analytics-service
+        image: us.gcr.io/time-382620/time-analytics-service
+        env:
+        - name: MYSQL_HOST
+          value: mysql_db
+        - name: MYSQL_PORT
+          value: 3306
+        - name: MYSQL_DATABASE
+          value: project1
+        - name: MYSQL_USER
+          value: root
+        - name: MYSQL_PASSWORD
+          value: root
+        - name: MONGO_HOST
+          value: mongo_db
+        - name: MONGO_PORT
+          value: 27017
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Always
