@@ -5,7 +5,13 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - name: enter-data-port
+    port: 8001
     targetPort: 5000
+
+  - name: mysql-port
+    port: 32000
+    targetPort: 3306
   selector:
-    app: enter-data
+    app: mysql-db
+  
