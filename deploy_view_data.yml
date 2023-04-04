@@ -6,14 +6,14 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: view_data
+      app: view-data
   template:
     metadata:
       labels:
-        app: view_data
+        app: view-data
     spec:
       containers:
-      - name: view_data
+      - name: view-data
         image: us.gcr.io/time-382620/time-view_data
         ports:
         - containerPort: 8004
