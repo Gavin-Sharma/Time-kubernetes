@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: view_data
+  name: view-data
 spec:
   replicas: 1
   selector:
