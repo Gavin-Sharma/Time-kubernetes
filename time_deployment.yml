@@ -42,6 +42,10 @@ spec:
         env:
         - name: AUTH_SERVICE_HOST
           value: nodelogin
+        - name: MYSQL_HOST
+          value: 34.173.173.97
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
         ports:
         - containerPort: 5000
         imagePullPolicy: Always
