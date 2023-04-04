@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: nodelogin
 spec:
+  type: LoadBalancer
   selector:
     app: nodelogin
   ports:
