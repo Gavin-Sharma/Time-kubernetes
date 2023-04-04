@@ -15,19 +15,6 @@ spec:
       containers:
       - name: mongo
         image: us.gcr.io/time-382620/mongo
-        command: [ "mongod", "--auth" ]
-        env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: "root"
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          value: "root"
-        - name: MONGO_INITDB_DATABASE
-          value: "analytics"
-        ports:
-        - containerPort: 27017
-        volumeMounts:
-        - name: mongo-initdb
-          mountPath: /docker-entrypoint-initdb.d
       volumes:
       - name: mongo-initdb
         configMap:
