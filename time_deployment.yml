@@ -53,7 +53,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo
+  name: mongo-db
 spec:
   replicas: 1
   selector:
@@ -67,6 +67,13 @@ spec:
       containers:
       - name: mongo
         image: us.gcr.io/time-382620/mongo
+      env:
+      - name: MONGO_INITDB_ROOT_USERNAME
+        value: root
+      - name: MONGO_INITDB_ROOT_PASSWORD
+        value: root
+      - name: MONGO_INITDB_DATABASE
+        value: analytics
       volumes:
       - name: mongo-initdb
 ---
