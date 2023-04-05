@@ -109,6 +109,8 @@ spec:
             mountPath: /docker-entrypoint-initdb.d
       volumes:
         - name: mysql-initdb
+          configMap:
+            name: mysql-initdb-configmap
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -152,3 +154,21 @@ spec:
         env:
         - name: AUTH_SERVICE_HOST
           value: nodelogin
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-initdb-configmap
+data:
+  project1.sql: |
+    CREATE DATABASE project1;
+    use project1;
+
+    CREATE TABLE times (
+      exercise FLOAT(5,2),
+      homework FLOAT(5,2),
+      sleep FLOAT(5,2),
+      phone FLOAT(5,2),
+      family FLOAT(5,2),
+      school FLOAT(5,2)
+    );
