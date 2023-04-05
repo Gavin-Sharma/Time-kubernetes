@@ -137,7 +137,7 @@ kind: Deployment
 metadata:
   name: view-data
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: view-data
