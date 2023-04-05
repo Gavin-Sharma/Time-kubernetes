@@ -71,7 +71,7 @@ metadata:
   labels:
     app: enter-data
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: enter-data
