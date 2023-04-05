@@ -1,0 +1,131 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: analytics-service
+  labels:
+    app: analytics-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: analytics-service
+  template:
+    metadata:
+      labels:
+        app: analytics-service
+    spec: 
+      containers:
+      - name: analytics-service
+        image: us.gcr.io/time-382620/time-analytics-service
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: view-data
+  labels:
+    app: view-data
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: view-data
+  template:
+    metadata:
+      labels:
+        app: view-data
+    spec: 
+      containers:
+      - name: view-data
+        image: us.gcr.io/time-382620/time-view_data
+        ports:
+        - containerPort: 8004
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nodelogin
+  labels:
+    app: nodelogin
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodelogin
+  template:
+    metadata:
+      labels:
+        app: nodelogin
+    spec: 
+      containers:
+      - name: nodelogin
+        image: us.gcr.io/time-382620/time-nodelogin
+        ports:
+        - containerPort: 3001
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: enter-data
+  labels:
+    app: enter-data
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: enter-data
+  template:
+    metadata:
+      labels:
+        app: enter-data
+    spec: 
+      containers:
+      - name: enter-data
+        image: us.gcr.io/time-382620/time-enter_data
+        ports:
+        - containerPort: 5000
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mysql-db
+  labels:
+    app: mysql-db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysql-db
+  template:
+    metadata:
+      labels:
+        app: mysql-db
+    spec: 
+      containers:
+      - name: mysql-db
+        image: us.gcr.io/time-382620/mysql
+        ports:
+        - containerPort: 3306
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: mongo-db
+  labels:
+    app: mongo-db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mongo-db
+  template:
+    metadata:
+      labels:
+        app: mongo-db
+    spec:
+      containers:
+      - name: mongo
+        image: us.gcr.io/time-382620/mongo
+        ports:
+        - containerPort: 27017
