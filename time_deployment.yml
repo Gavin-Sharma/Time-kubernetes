@@ -145,7 +145,7 @@ spec:
         app: view-data
     spec:
       containers:
-      - name: view-data
+      - name: view_data
         image: us.gcr.io/time-382620/time-view_data
         ports:
         - containerPort: 8004
