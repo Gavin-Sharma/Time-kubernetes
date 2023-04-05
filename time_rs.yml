@@ -5,7 +5,7 @@ metadata:
   labels:
     app: analytics-service
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: analytics-service
@@ -27,7 +27,7 @@ metadata:
   labels:
     app: view-data
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: view-data
@@ -49,7 +49,7 @@ metadata:
   labels:
     app: nodelogin
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: nodelogin
@@ -71,7 +71,7 @@ metadata:
   labels:
     app: enter-data
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: enter-data
@@ -93,7 +93,7 @@ metadata:
   labels:
     app: mysql-db
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: mysql-db
@@ -115,7 +115,7 @@ metadata:
   labels:
     app: mongo-db
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: mongo-db
